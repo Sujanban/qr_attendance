@@ -34,7 +34,7 @@ app.get("/api/generateqr", (req, res) => {
       },
     };
 
-    QRCode.toDataURL("text", opts, function (err, url) {
+    QRCode.toDataURL("Testing QR code Feature", opts, function (err, url) {
       if (err) throw err;
       console.log(url);
       res.json({ url });
