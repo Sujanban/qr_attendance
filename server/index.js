@@ -21,8 +21,9 @@ app.get("/api", (req, res) => {
   res.json({ message: "Hello from server!" });
 });
 
-app.get("/api/generateqr", (req, res) => {
+app.post("/api/generateqr", (req, res) => {
   try {
+    const userInput = req.body.userInput;
     var opts = {
       errorCorrectionLevel: "H",
       type: "image/jpeg",
@@ -34,9 +35,9 @@ app.get("/api/generateqr", (req, res) => {
       },
     };
 
-    QRCode.toDataURL("Testing QR code Feature", opts, function (err, url) {
+    QRCode.toDataURL(userInput, opts, function (err, url) {
       if (err) throw err;
-      console.log(url);
+      // console.log(url);
       res.json({ url });
     });
   } catch (err) {
