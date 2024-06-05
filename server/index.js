@@ -37,11 +37,9 @@ app.post("/api/generateqr", (req, res) => {
 
     QRCode.toDataURL(userInput, opts, function (err, url) {
       if (err) throw err;
-      // console.log(url);
       res.json({ url });
     });
   } catch (err) {
-    console.error("Error generating QR code:", err);
     throw new Error("Failed to generate QR code");
   }
 });

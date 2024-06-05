@@ -12,10 +12,6 @@ function App() {
     setSource(res.data.url);
   }
 
-  // useEffect(() => {
-  //   genrrateQR()
-  // }, [])
-
   return (
     <div>
       <form action="">
